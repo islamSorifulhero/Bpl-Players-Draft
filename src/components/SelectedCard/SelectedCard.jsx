@@ -1,6 +1,11 @@
 import React from 'react';
 
-const SelectedCard = ({player}) => {
+const SelectedCard = ({player, removePlayer}) => {
+    const handleRemove = () =>{
+        removePlayer(
+            player
+        )
+    }
     return (
         <div className='flex justify-between items-center border border-gray-300 p-3 rounded mb-4'>
             <div className='flex gap-4 items-center'>
@@ -10,7 +15,7 @@ const SelectedCard = ({player}) => {
                     <h1>{player.playing_role}</h1>
                 </div>
             </div>
-            <div>
+            <div onClick={handleRemove}>
                 <img src="https://i.ibb.co.com/SwfkGrZ3/Vector.png" alt="" />
             </div>
         </div>
